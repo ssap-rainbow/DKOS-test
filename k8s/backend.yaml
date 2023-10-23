@@ -19,3 +19,14 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
+      tolerations:
+        - key: "node-role.dkosv3.9rum.cc/lb"
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
+        - key: "node-role.kubernetes.io/master"
+          operator: "Exists"
+          effect: "NoSchedule"
+        - key: "node.kubernetes.io/unreachable"
+          operator: "Exists"
+          effect: "NoExecute"
