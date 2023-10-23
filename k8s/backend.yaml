@@ -1,17 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:
-  name: krampoline
 spec:
-  selector:
-    matchLabels:
-      app: krampoline
   template:
     metadata:
       labels:
-        app: krampoline
+        app: backend
     spec:
       containers:
-        - name: krampoline
+        - name: backend
           # 여러분의 image 주소를 입력해주세요.
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_0a13d170e417
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_e6647ab2bd25
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
