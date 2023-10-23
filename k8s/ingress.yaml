@@ -6,7 +6,6 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: kargocd
   name: krampoline
-  namespace: default
 spec:
   rules:
     - http:
@@ -14,5 +13,5 @@ spec:
           - backend:
               serviceName: krampoline
               servicePort: 8080
-              path: /
-              pathType: Prefix
+            path: /
+            pathType: Prefix
